@@ -1,3 +1,4 @@
+onload=alert("hello");
 var slideIndex = 1;
 showSlides(slideIndex);
 
