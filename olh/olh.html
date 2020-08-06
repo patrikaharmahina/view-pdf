@@ -14,6 +14,11 @@ img {vertical-align: middle;}
   position: relative;
   margin: auto;
 }
+  
+.fullscreen_icon{
+position:absolute;
+top:4px;
+right:4px;}  
 
 /* Next & previous buttons */
 .prev, .next {
@@ -95,7 +100,8 @@ img {vertical-align: middle;}
 </style>
 </head>
 <body>
-<div class="slideshow-container">
+<div class="slideshow-container" id="olh-md">
+  <img onclick="openFullscreen();" class="fullscreen_icon" src="fs_icon.png" height="50px;">
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 54</div>
@@ -379,6 +385,21 @@ img {vertical-align: middle;}
 </div>
 
 <script>
+  
+  var elem = document.getElementById("olh-md");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}  
+  
+  
 var slideIndex = 1;
 showSlides(slideIndex);
 
